@@ -4,7 +4,7 @@
 #
 Name     : python-urwid
 Version  : 1.3.1
-Release  : 3
+Release  : 4
 URL      : https://pypi.python.org/packages/source/u/urwid/urwid-1.3.1.tar.gz
 Source0  : https://pypi.python.org/packages/source/u/urwid/urwid-1.3.1.tar.gz
 Summary  : A full-featured console (xterm et al.) user interface library
