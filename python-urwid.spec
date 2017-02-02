@@ -4,7 +4,7 @@
 #
 Name     : python-urwid
 Version  : 1.3.1
-Release  : 9
+Release  : 10
 URL      : https://pypi.python.org/packages/source/u/urwid/urwid-1.3.1.tar.gz
 Source0  : https://pypi.python.org/packages/source/u/urwid/urwid-1.3.1.tar.gz
 Summary  : A full-featured console (xterm et al.) user interface library
@@ -16,6 +16,7 @@ BuildRequires : pip
 BuildRequires : python-dev
 BuildRequires : python3-dev
 BuildRequires : setuptools
+Patch1: ignore-decode-errors.patch
 
 %description
 .. image:: https://travis-ci.org/wardi/urwid.png?branch=master
@@ -32,8 +33,11 @@ python components for the python-urwid package.
 
 %prep
 %setup -q -n urwid-1.3.1
+%patch1 -p1
 
 %build
+export LANG=C
+export SOURCE_DATE_EPOCH=1486065385
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
@@ -41,11 +45,12 @@ python3 setup.py build -b py3
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-python2 setup.py test
+PYTHONPATH=%{buildroot}/usr/lib/python2.7/site-packages python2 setup.py test
 %install
+export SOURCE_DATE_EPOCH=1486065385
 rm -rf %{buildroot}
-python2 -tt setup.py build -b py2 install --root=%{buildroot}
-python3 -tt setup.py build -b py3 install --root=%{buildroot}
+python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
+python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
 
 %files
 %defattr(-,root,root,-)

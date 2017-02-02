@@ -1,0 +1,14 @@
+Ignore bytes that decode() fails to decode, as this results in a crash.
+---
+
+--- urwid-1.3.1/urwid/raw_display.py	2017-01-31 16:16:20.213192085 -0800
++++ urwid-1.3.1-new/urwid/raw_display.py	2017-01-31 16:18:38.946189119 -0800
+@@ -834,7 +834,7 @@
+         try:
+             for l in o:
+                 if isinstance(l, bytes) and PYTHON3:
+-                    l = l.decode('utf-8')
++                    l = l.decode('utf-8', 'ignore')
+                 self.write(l)
+             self.flush()
+         except IOError as e:
