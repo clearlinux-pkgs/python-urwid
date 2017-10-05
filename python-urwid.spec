@@ -4,7 +4,7 @@
 #
 Name     : python-urwid
 Version  : 1.3.1
-Release  : 13
+Release  : 14
 URL      : http://pypi.debian.net/urwid/urwid-1.3.1.tar.gz
 Source0  : http://pypi.debian.net/urwid/urwid-1.3.1.tar.gz
 Summary  : A full-featured console (xterm et al.) user interface library
@@ -26,6 +26,7 @@ Urwid is a console user interface library for Python.
 %package legacypython
 Summary: legacypython components for the python-urwid package.
 Group: Default
+Requires: python-core
 
 %description legacypython
 legacypython components for the python-urwid package.
@@ -44,6 +45,7 @@ python components for the python-urwid package.
 %package python3
 Summary: python3 components for the python-urwid package.
 Group: Default
+Requires: python3-core
 
 %description python3
 python3 components for the python-urwid package.
@@ -58,7 +60,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1506867715
+export SOURCE_DATE_EPOCH=1507170538
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
@@ -68,7 +70,7 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 PYTHONPATH=%{buildroot}/usr/lib/python3.6/site-packages python3 setup.py test || :
 %install
-export SOURCE_DATE_EPOCH=1506867715
+export SOURCE_DATE_EPOCH=1507170538
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
