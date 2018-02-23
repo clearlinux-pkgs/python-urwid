@@ -4,13 +4,12 @@
 #
 Name     : python-urwid
 Version  : 1.3.1
-Release  : 17
+Release  : 18
 URL      : http://pypi.debian.net/urwid/urwid-1.3.1.tar.gz
 Source0  : http://pypi.debian.net/urwid/urwid-1.3.1.tar.gz
 Summary  : A full-featured console (xterm et al.) user interface library
 Group    : Development/Tools
 License  : LGPL-2.1
-Requires: python-urwid-legacypython
 Requires: python-urwid-python3
 Requires: python-urwid-python
 BuildRequires : pbr
@@ -35,7 +34,6 @@ legacypython components for the python-urwid package.
 %package python
 Summary: python components for the python-urwid package.
 Group: Default
-Requires: python-urwid-legacypython
 Requires: python-urwid-python3
 
 %description python
@@ -60,7 +58,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1507170538
+export SOURCE_DATE_EPOCH=1519423213
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
@@ -70,7 +68,7 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 PYTHONPATH=%{buildroot}/usr/lib/python3.6/site-packages python3 setup.py test || :
 %install
-export SOURCE_DATE_EPOCH=1507170538
+export SOURCE_DATE_EPOCH=1519423213
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
