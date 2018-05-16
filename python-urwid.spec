@@ -4,7 +4,7 @@
 #
 Name     : python-urwid
 Version  : 2.0.1
-Release  : 22
+Release  : 23
 URL      : http://pypi.debian.net/urwid/urwid-2.0.1.tar.gz
 Source0  : http://pypi.debian.net/urwid/urwid-2.0.1.tar.gz
 Summary  : A full-featured console (xterm et al.) user interface library
