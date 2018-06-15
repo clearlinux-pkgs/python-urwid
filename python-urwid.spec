@@ -14,7 +14,7 @@ Requires: python-urwid-python3
 Requires: python-urwid-python
 BuildRequires : pbr
 BuildRequires : pip
-BuildRequires : python-dev
+
 BuildRequires : python3-dev
 BuildRequires : setuptools
 
