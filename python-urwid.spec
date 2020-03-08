@@ -4,10 +4,10 @@
 #
 Name     : python-urwid
 Version  : 2.1.0
-Release  : 38
+Release  : 39
 URL      : https://files.pythonhosted.org/packages/45/dd/d57924f77b0914f8a61c81222647888fbb583f89168a376ffeb5613b02a6/urwid-2.1.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/45/dd/d57924f77b0914f8a61c81222647888fbb583f89168a376ffeb5613b02a6/urwid-2.1.0.tar.gz
-Summary  : Curses-based user interface library
+Summary  : A full-featured console (xterm et al.) user interface library
 Group    : Development/Tools
 License  : LGPL-2.1
 Requires: python-urwid-license = %{version}-%{release}
@@ -16,14 +16,10 @@ Requires: python-urwid-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
 
 %description
-Urwid
-=====
-|pypi| |docs| |travis| |coveralls|
-.. content-start
 About
-=====
-Urwid is a console user interface library for Python.
-It includes many features useful for text console application developers including:
+        =====
+        
+        Urwid is a console user interface library for Python.
 
 %package license
 Summary: license components for the python-urwid package.
@@ -46,6 +42,7 @@ python components for the python-urwid package.
 Summary: python3 components for the python-urwid package.
 Group: Default
 Requires: python3-core
+Provides: pypi(urwid)
 
 %description python3
 python3 components for the python-urwid package.
@@ -60,8 +57,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1583215636
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1583704372
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
